@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
-use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +50,7 @@ Route::view("/contact", 'contact');
  * check the pass-data.blade.php
  */
 Route::get('/pass-data/{name}', function ($name) {
-    return view('about', ['name' => $name] );
+    return view('pass-data', ['name' => $name] );
 });
 
 /**
@@ -85,3 +84,24 @@ Route::get("/names/{name}", [Users::class, 'getMyName']);
  * eg http://127.0.0.1:8000/api
  */
 Route::get("/api", [Users::class, 'asAnAPI']);
+
+/**
+ * Calling a view from the controller
+ * "/view" is the url
+ * "loadView" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/view
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/view", [Users::class, 'loadView']);
+
+
+/**
+ * Calling a view from the controller
+ * "/view" is the url
+ * "loadView" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/viewPassData/Martin/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/viewPassData/{name}/", [Users::class, 'loadViewPassData']);

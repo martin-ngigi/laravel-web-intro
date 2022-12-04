@@ -31,4 +31,22 @@ class Users extends Controller
     public function asAnAPI(){
         return ['name' => "Martin", 'age' => 10];
     }
+
+    /**
+     * Summary of loadView
+     * @return myView.blade.php which is the view defined in the views
+     * Explanation: The view is called by the Controller, Then then controller is called by the route
+     */
+    public function loadView(){
+        return view('myView');
+    }
+
+     /**
+     * Summary of loadView
+     * @return myViewPassData.blade.php which is the view defined in the views
+     * Explanation: The view is called by the Controller, Then then controller is called by the route
+     */
+    public function loadViewPassData($name){
+        return view('myViewPassData', ['name'=>$name]);
+    }
 }
