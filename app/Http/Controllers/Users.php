@@ -90,7 +90,8 @@ class Users extends Controller
      * Summary of getMyData
      * @return string
      */
-    function getMyData(){
-        return "Form Data will be here ";
+    function getMyData(Request $myRequest){
+        // return "Form Data will be here ";
+        return $myRequest->input();
     }
 }

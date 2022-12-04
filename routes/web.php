@@ -199,6 +199,6 @@ Route::post("/get-users", [Users::class, 'getMyData']);
  * form is the view ie form.blade.php
  * eg http://127.0.0.1:8000/login/
  * Explanation: When the user clicks the btn login,,, he is redirected to "/get-users"......
- * "/get-users" calls the User controller which has getMyData method which returns a string
+ * "/get-users" calls the User controller which has getMyData method which returns a users input plus token
  */
 Route::view("/login", "forms");
