@@ -107,8 +107,17 @@ Route::get("/view", [Users::class, 'loadView']);
 Route::get("/viewPassData/{name}/", [Users::class, 'loadViewPassData']);
 
 
-
-
 Route::get('/url-gen', function () {
     return view("url-generation");
+});
+
+
+/**
+ * "/component" is the name of the url
+ * Users is the Controller
+ * 'myComponent' is the myComponent.blade.php view.
+ * eg http://127.0.0.1:8000/component
+ */
+Route::get("/component", function () {
+    return view("myComponent");
 });

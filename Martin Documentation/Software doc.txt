@@ -15,3 +15,6 @@ Routing - Means mapping specific page with a specific URL.
 blade - templating feature provided by laravel. ALso provides laravel features such as no need of use of tags.
 
 Controller - all the logical programming is done here.
+
+Component - a piece of code that can be re-used. Its almost similar to functions only that functions have some limitations
+    eg a Component can be used in header or footer.

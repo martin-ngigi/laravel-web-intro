@@ -37,4 +37,7 @@ DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
 -Angular etc need a backend framewwork
 
 Making Controller run:
-php artisan make:controller Users
+    php artisan make:controller Users
+
+Making a component (its a piece of code that can be reused eg a header):
+    php artisan make:component header
