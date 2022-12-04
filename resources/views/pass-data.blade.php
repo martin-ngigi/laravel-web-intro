@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<h1> Hello World. Its Martin..</h1>
+	<h1>Pass Data From View to Route</h1>
+    <p>{{$name}}</p>
 </body>
 </html>

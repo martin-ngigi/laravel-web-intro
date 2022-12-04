@@ -11,3 +11,6 @@ Composer - Is a dependency manager for PhP.
 		   Instances where composer is used: To pdf generator, inject JQuery, JWT tijen generation.
 
 Routing - Means mapping specific page with a specific URL.
+
+blade - templating feature provided by laravel. ALso provides laravel features such as no need of use of tags.
+
