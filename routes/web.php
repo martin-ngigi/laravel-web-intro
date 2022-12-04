@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Products;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 
@@ -175,3 +176,12 @@ Route::get("/forEach-blade", [Users::class, 'forEachM']);
 Route::get("/including-views", function () {
     return view("myIncludes/outer");
 });
+
+/**
+ * "/inline-blade" is the url
+ * "myIncludes/outer" is the view dirctory
+ * eg http://127.0.0.1:8000/inline-blade/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/inline-blade", [Products::class, 'productsList']);
