@@ -105,3 +105,10 @@ Route::get("/view", [Users::class, 'loadView']);
  * Explanation: The view is called by the Controller, Then then controller is called by the route
  */
 Route::get("/viewPassData/{name}/", [Users::class, 'loadViewPassData']);
+
+
+
+
+Route::get('/url-gen', function () {
+    return view("url-generation");
+});
