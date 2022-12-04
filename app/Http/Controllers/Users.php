@@ -85,4 +85,12 @@ class Users extends Controller
         $data = ['Martin', 'Ken', 'David', 'Peris'];
         return view('forEachBlade', ['users'=>$data]);
     }
+
+    /**
+     * Summary of getMyData
+     * @return string
+     */
+    function getMyData(){
+        return "Form Data will be here ";
+    }
 }

@@ -185,3 +185,20 @@ Route::get("/including-views", function () {
  * Explanation: The view is called by the Controller, Then then controller is called by the route
  */
 Route::get("/inline-blade", [Products::class, 'productsList']);
+
+
+/**
+ * Calling a view from the controller
+ * "/get-users" is the url
+ * "getData" is the method defined in the User Controller
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::post("/get-users", [Users::class, 'getMyData']);
+/**
+ * form is the view ie form.blade.php
+ * eg http://127.0.0.1:8000/login/
+ * Explanation: When the user clicks the btn login,,, he is redirected to "/get-users"......
+ * "/get-users" calls the User controller which has getMyData method which returns a string
+ */
+Route::view("/login", "forms");
