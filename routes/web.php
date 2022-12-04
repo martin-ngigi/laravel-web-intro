@@ -164,3 +164,14 @@ Route::get("/for-blade", [Users::class, 'forM']);
  * Explanation: The view is called by the Controller, Then then controller is called by the route
  */
 Route::get("/forEach-blade", [Users::class, 'forEachM']);
+
+/**
+ * "/including-views" is the url
+ * "myIncludes/outer" is the view dirctory
+ * eg http://127.0.0.1:8000/including-views/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/including-views", function () {
+    return view("myIncludes/outer");
+});
