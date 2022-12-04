@@ -121,3 +121,46 @@ Route::get('/url-gen', function () {
 Route::get("/component", function () {
     return view("myComponent");
 });
+
+
+/**
+ * Calling a view from the controller
+ * "/my-blade" is the url
+ * "myM" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/my-blade/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/my-blade", [Users::class, 'myM']);
+
+
+/**
+ * Calling a view from the controller
+ * "/if-blade" is the url
+ * "ifM" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/if-blade/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/if-blade", [Users::class, 'ifM']);
+
+/**
+ * Calling a view from the controller
+ * "/for-blade" is the url
+ * "forM" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/for-blade/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/for-blade", [Users::class, 'forM']);
+
+
+/**
+ * Calling a view from the controller
+ * "/for-blade" is the url
+ * "forEachM" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/forEach-blade/
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/forEach-blade", [Users::class, 'forEachM']);

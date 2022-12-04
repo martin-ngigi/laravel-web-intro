@@ -12,7 +12,11 @@ Composer - Is a dependency manager for PhP.
 
 Routing - Means mapping specific page with a specific URL.
 
-blade - templating feature provided by laravel. ALso provides laravel features such as no need of use of tags.
+blade -blade template is a template engine that can convert simple text to php
+       templating feature provided by laravel. ALso provides laravel features such as no need of use of tags.
+       eg:
+            <?php ?> ---> in PhP
+            {{}}     ----> in blade template
 
 Controller - all the logical programming is done here.
 
