@@ -1,0 +1,11 @@
+Framework - A common structure for developer application so that developers dont have to develop from scretch.
+
+Php uses MVC (Model View Controller) architecture.
+Model - Manages data and business logic
+View - Handles layout and display
+Controller - Routes commands to the model and view parts. Acts as an interface between view and models.
+
+Composer - Is a dependency manager for PhP.
+		   It is similar to NPM in Node.
+		   Can be used to update the project and the framework.
+		   Instances where composer is used: To pdf generator, inject JQuery, JWT tijen generation.

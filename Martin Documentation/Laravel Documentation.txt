@@ -1,0 +1,37 @@
+Youtube Tutorial -> https://www.youtube.com/watch?v=9fC5zmvbDwU&list=PL8p2I9GklV47Jszga434vZxOmY74Q1N_K&index=2&ab_channel=CodeStepByStep
+
+Installations:
+1. Install Xamp(once) - will also automatically install php
+2. Install Composer(once)
+3. Install laravel(once)
+
+Check php version:
+	php -v
+Check composer version:
+	composer --version
+Install laravel globally in cmd by running following command in cmd:
+	composer global require laravel/installer
+check laravel version:
+	laravel -v
+
+
+Create new Laravel project:
+	laravel new laravel-web
+	
+start Laravel's local development server using the Laravel's Artisan CLI serve command:
+	cd new laravel-web
+	php artisan serve	
+	
+the web will be  visible at 
+	http://127.0.0.1:8000/
+	
+or after starting the xamp server, navigate to htdocs xamp and copy the relative path : 
+http://localhost/LARAVEL/laravel-web/public/
+
+DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
+-laravel is a aserver-side framewwork while angular etc are client side framewwork
+-You can not make a single-page app directly
+-It can connect with db
+-Angular etc cant connect with db directly
+-Angular etc need api
+-Angular etc need a backend framewwork
