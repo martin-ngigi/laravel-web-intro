@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +61,27 @@ Route::get('/pass-data/{name}', function ($name) {
 Route::get("/redirect", function () {
     return redirect("/about");
 });
+
+/**
+ * get the controller
+ * "/users" is the name of the url
+ * Users is the Controller
+ * 'index' is the method inside the controller.
+ * eg http://127.0.0.1:8000/users
+ */
+Route::get("/users", [Users::class, 'index']);
+
+/**
+ * "/names" is the name of the url
+ * getMyName is a function which expects name argument
+ * eg http://127.0.0.1:8000/names/Martin
+ *
+ */
+Route::get("/names/{name}", [Users::class, 'getMyName']);
+
+/**
+ * "/api" is the url
+ * 'asAnAPI' is the method defined in the users controller
+ * eg http://127.0.0.1:8000/api
+ */
+Route::get("/api", [Users::class, 'asAnAPI']);

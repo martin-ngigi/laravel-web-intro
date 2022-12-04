@@ -17,15 +17,15 @@ check laravel version:
 
 Create new Laravel project:
 	laravel new laravel-web
-	
+
 start Laravel's local development server using the Laravel's Artisan CLI serve command:
 	cd new laravel-web
-	php artisan serve	
-	
-the web will be  visible at 
+	php artisan serve
+
+the web will be  visible at
 	http://127.0.0.1:8000/
-	
-or after starting the xamp server, navigate to htdocs xamp and copy the relative path : 
+
+or after starting the xamp server, navigate to htdocs xamp and copy the relative path :
 http://localhost/LARAVEL/laravel-web/public/
 
 DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
@@ -35,3 +35,6 @@ DIFFERENCE BETWEEN LARAVEL AND (ANGULAR, REACT , ETC)
 -Angular etc cant connect with db directly
 -Angular etc need api
 -Angular etc need a backend framewwork
+
+Making Controller run:
+php artisan make:controller Users
