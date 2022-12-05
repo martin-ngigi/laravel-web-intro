@@ -284,3 +284,17 @@ Route::get("/get-users", [UserController::class, 'getDataFromDB']);
  * Explanation:Then then controller is called by the route
  */
 Route::get("/get-api-data", [UserController::class, 'apiData']);
+
+/**
+ * HTTP REQUEST METHODS
+ * Calling a view from the controller
+ * "/login-requests" is the url
+ * "testRequest" is the method defined in the UserController
+ * http://127.0.0.1:8000/login-requests
+ *
+ * Explanation:Then then controller is called by the route
+ */
+//route::post("/http-user-requests", [UserController::class, "testRequest"]);
+//route::delete("/http-user-requests", [UserController::class, "testRequest"]);
+route::put("/http-user-requests", [UserController::class, "testRequest"]);
+Route::view("/login-requests", "httpRequestAPIs/users");

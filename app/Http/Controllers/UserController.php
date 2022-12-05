@@ -85,4 +85,8 @@ class UserController extends Controller
         $collection = Http::get("https://reqres.in/api/users");
         return view('httpClientAPI/users', ['collection'=> $collection['data']]);
     }
+
+    function testRequest(Request $req){
+        return $req -> input();
+    }
 }
