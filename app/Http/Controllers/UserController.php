@@ -85,7 +85,12 @@ class UserController extends Controller
         $collection = Http::get("https://reqres.in/api/users");
         return view('httpClientAPI/users', ['collection'=> $collection['data']]);
     }
-
+    /**
+     * Summary of testRequest
+     * @param Request $req
+     * @return mixed
+     * for testing http requests
+     */
     function testRequest(Request $req){
         return $req -> input();
     }

@@ -4,6 +4,7 @@ use App\Http\Controllers\Products;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
+use App\Http\Controllers\UserAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -288,6 +289,7 @@ Route::get("/get-api-data", [UserController::class, 'apiData']);
 /**
  * HTTP REQUEST METHODS
  * Calling a view from the controller
+ * "/http-user-requests" is the action to be performed when login button is clicked
  * "/login-requests" is the url
  * "testRequest" is the method defined in the UserController
  * http://127.0.0.1:8000/login-requests
@@ -298,3 +300,33 @@ Route::get("/get-api-data", [UserController::class, 'apiData']);
 //route::delete("/http-user-requests", [UserController::class, "testRequest"]);
 route::put("/http-user-requests", [UserController::class, "testRequest"]);
 Route::view("/login-requests", "httpRequestAPIs/users");
+
+/**
+ *
+ * SAVING DATA IN SESSIONS
+ * "/login-session-requests" is the action to be performed when login button is clicked
+ * "getLoginSession" is the method in UserAuth Controller that is called
+ * "/my-login" is the url
+ * "/profile" is the url
+ * 'sessions/login' is the view
+ * 'sessions/profile' is the view
+ */
+//http://127.0.0.1:8000/my-login
+Route::post("/login-session-requests", [UserAuth::class, "getLoginSession"]);
+//Route::view("/my-login", 'sessions/login');
+Route::view("/profile", 'sessions/profile');
+Route::get("/my-login", function () {
+    if(session() -> has('user')){
+        session() -> pull('user');
+        return view('sessions/profile');
+    }
+    else{
+        return view('sessions/login');
+    }
+});
+Route::get("/logout", function () {
+    if(session() -> has('user')){
+        session() -> pull('user');
+    }
+    return redirect('/my-login');
+});
