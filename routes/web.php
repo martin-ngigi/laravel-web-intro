@@ -212,14 +212,25 @@ Route::view("/login", "forms");
  *
  * Explanation: The view is called by the Controller, Then then controller is called by the route
  */
-//http://127.0.0.1:8000/middleware-users?age=20
+//http://127.0.0.1:8000/middleware-users?age=15
+//eg http://127.0.0.1:8000/middleware-users?age=19
 Route::get("/middleware-users", function () {
     return view("myMiddleware/users");
 });
+//http://127.0.0.1:8000/middleware-no-access
 Route::get("/middleware-no-access", function () {
     return view("myMiddleware/noAccess");
 });
-//http://127.0.0.1:8000/middleware-home?age=19
-Route::get("/middleware-home", function () {
-    return view("myMiddleware/home");
+
+
+
+/** Grouped middle to only allow access to home page to who are 18 years and above
+ * eg check in the kernel.php
+ */
+Route::group(['middleware' => ['myProtectedPage']], function(){
+    //http://127.0.0.1:8000/middleware-home?age=15
+    //http://127.0.0.1:8000/middleware-home?age=19
+    Route::get("/middleware-home", function () {
+        return view("myMiddleware/home");
+    });
 });
