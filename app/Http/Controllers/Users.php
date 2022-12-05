@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Users extends Controller
 {
@@ -103,5 +104,14 @@ class Users extends Controller
 
         //return user's input
         return $req->input();
+    }
+
+    /**
+     * Summary of myIndex
+     * @return void
+     */
+    public function myIndex(){
+        //echo "Hello from controller";
+        return DB::select("select * from users");
     }
 }

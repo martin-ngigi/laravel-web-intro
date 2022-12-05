@@ -247,3 +247,14 @@ Route::group(['middleware' => ['myProtectedPage']], function(){
  * eg http://127.0.0.1:8000/middleware-about?age=19
  */
 Route::view("/middleware-about", "myMiddleware/about")->middleware('myProtected');
+
+
+/**
+ * Calling a view from the controller
+ * "/myusers" is the url
+ * "myIndex" is the method defined in the User Controller
+ * eg http://127.0.0.1:8000/myusers
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+Route::get("/myusers",[ Users::class, "myIndex"]);

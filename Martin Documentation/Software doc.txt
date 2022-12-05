@@ -28,3 +28,7 @@ Middleware - type of code that can filter out users request. eg login... if user
         1. Global Middleware - Applied at a complete website on a single time
         2. Groupped Middleware -  Applied at specific pages eg 20 pages
         3. Routed Middleware - Applied ata a single route at a time
+
+DATABASE
+-Check .env file for the database configurations so as to edit accordingly
+- the settings are consumed by congig\database.php
