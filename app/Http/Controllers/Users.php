@@ -109,6 +109,7 @@ class Users extends Controller
     /**
      * Summary of myIndex
      * @return void
+     * Fetches the data from the db without the use of a model
      */
     public function myIndex(){
         //echo "Hello from controller";

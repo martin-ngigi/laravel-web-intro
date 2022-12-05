@@ -32,3 +32,11 @@ Middleware - type of code that can filter out users request. eg login... if user
 DATABASE
 -Check .env file for the database configurations so as to edit accordingly
 - the settings are consumed by congig\database.php
+
+Models
+A model should match with table name. and Should be in singular tense
+eg
+Model       Table
+User        Users
+
+

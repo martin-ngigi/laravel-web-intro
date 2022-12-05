@@ -44,3 +44,6 @@ Making a component (its a piece of code that can be reused eg a header):
 
 Making MiddleWare(is a piece of code that checks users request. eg at login).. Run:
     php artisan make:middleware ageCheck
+
+Making models(Should be similar to Table name, but in singular tense)
+    php artisan make:model User

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Products;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 
@@ -255,6 +256,19 @@ Route::view("/middleware-about", "myMiddleware/about")->middleware('myProtected'
  * "myIndex" is the method defined in the User Controller
  * eg http://127.0.0.1:8000/myusers
  *
- * Explanation: The view is called by the Controller, Then then controller is called by the route
+ * Explanation: Then then controller is called by the route
  */
 Route::get("/myusers",[ Users::class, "myIndex"]);
+
+
+
+/**
+ * GETTING DATA FROM DB USING A MODEL
+ * Calling a view from the controller
+ * "/get-users" is the url
+ * "getDataFromDB" is the method defined in the UserController
+ * eg http://127.0.0.1:8000/get-users
+ *
+ * Explanation:Then then controller is called by the route
+ */
+Route::get("/get-users", [UserController::class, 'getDataFromDB']);
