@@ -226,6 +226,8 @@ Route::get("/middleware-no-access", function () {
 
 /** Grouped middle to only allow access to home page to who are 18 years and above
  * eg check in the kernel.php
+ * if age<18 redirect to no-access page else redirect to home page
+ * 'myProtectedPage' is the name defined in the kernel.php
  */
 Route::group(['middleware' => ['myProtectedPage']], function(){
     //http://127.0.0.1:8000/middleware-home?age=15
@@ -234,3 +236,14 @@ Route::group(['middleware' => ['myProtectedPage']], function(){
         return view("myMiddleware/home");
     });
 });
+
+/**
+ * route middleware
+ * if age<18 redirect to no-access page else redirect to about page
+ *'myProtected' is the name defined in the kernel.php
+ * "/middleware-about" is the url
+ * "myMiddleware/about" is the view directory
+ * eg http://127.0.0.1:8000/middleware-about?age=15
+ * eg http://127.0.0.1:8000/middleware-about?age=19
+ */
+Route::view("/middleware-about", "myMiddleware/about")->middleware('myProtected');

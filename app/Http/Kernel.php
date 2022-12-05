@@ -47,7 +47,7 @@ class Kernel extends HttpKernel
 
         'myProtectedPage' => [
             \App\Http\Middleware\ageCheck::class, //Martin Added
-        ]
+        ],
 
     ];
 
@@ -69,5 +69,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        'myProtected' => \App\Http\Middleware\ageCheck::class, //Martin Added
+
     ];
 }
