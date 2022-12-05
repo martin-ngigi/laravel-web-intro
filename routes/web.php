@@ -272,3 +272,15 @@ Route::get("/myusers",[ Users::class, "myIndex"]);
  * Explanation:Then then controller is called by the route
  */
 Route::get("/get-users", [UserController::class, 'getDataFromDB']);
+
+
+/**
+ * GETTING DATA FROM API
+ * Calling a view from the controller
+ * "/get-api-data" is the url
+ * "apiData" is the method defined in the UserController
+ * eg http://127.0.0.1:8000/get-api-data
+ *
+ * Explanation:Then then controller is called by the route
+ */
+Route::get("/get-api-data", [UserController::class, 'apiData']);
