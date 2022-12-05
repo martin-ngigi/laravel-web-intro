@@ -41,3 +41,6 @@ Making Controller run:
 
 Making a component (its a piece of code that can be reused eg a header):
     php artisan make:component header
+
+Making MiddleWare(is a piece of code that checks users request. eg at login).. Run:
+    php artisan make:middleware ageCheck

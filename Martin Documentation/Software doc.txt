@@ -22,3 +22,9 @@ Controller - all the logical programming is done here.
 
 Component - a piece of code that can be re-used. Its almost similar to functions only that functions have some limitations
     eg a Component can be used in header or footer.
+
+Middleware - type of code that can filter out users request. eg login... if user is logged in, he can access the website else he/she cant access the website.
+    Types of Middleware:
+        1. Global Middleware - Applied at a complete website on a single time
+        2. Groupped Middleware -  Applied at specific pages eg 20 pages
+        3. Routed Middleware - Applied ata a single route at a time

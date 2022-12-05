@@ -202,3 +202,24 @@ Route::post("/get-users", [Users::class, 'getMyData']);
  * "/get-users" calls the User controller which has getMyData method which returns a users input plus token
  */
 Route::view("/login", "forms");
+
+
+/**
+ * "/middleware-users" is the url
+ * "myMiddleware/users" is the view dirctory
+ * eg http://127.0.0.1:8000/middleware-users/
+ * eg http://127.0.0.1:8000/middleware-users?age=19
+ *
+ * Explanation: The view is called by the Controller, Then then controller is called by the route
+ */
+//http://127.0.0.1:8000/middleware-users?age=20
+Route::get("/middleware-users", function () {
+    return view("myMiddleware/users");
+});
+Route::get("/middleware-no-access", function () {
+    return view("myMiddleware/noAccess");
+});
+//http://127.0.0.1:8000/middleware-home?age=19
+Route::get("/middleware-home", function () {
+    return view("myMiddleware/home");
+});
