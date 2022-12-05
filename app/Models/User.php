@@ -11,9 +11,10 @@ class User extends Model
     /**
      * Incase the table name dont match with model name...
      * One can define the table name here
+     * 
      * eg the model name is User but the db table name is Employees
      */
-    
+
     //public $table = "employees";
 
 }
