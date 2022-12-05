@@ -88,10 +88,20 @@ class Users extends Controller
 
     /**
      * Summary of getMyData
-     * @return string
+     * @return string inform of json
      */
-    function getMyData(Request $myRequest){
-        // return "Form Data will be here ";
-        return $myRequest->input();
+    function getMyData(Request $req){
+        /**
+         * Validate user input
+         * 'username' is the name from froms.blade.php
+         * 'userpassword'  is the name from froms.blade.php
+         */
+        $req->validate([
+            'username' => 'required | min:3 | max:20',
+            'userpassword' => 'required  | min:3 | max:20 '
+        ]);
+
+        //return user's input
+        return $req->input();
     }
 }
