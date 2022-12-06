@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\AddMemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -330,3 +331,19 @@ Route::get("/logout", function () {
     }
     return redirect('/my-login');
 });
+
+/**
+ * FLASH SESSIONS
+ * Calling a view from the controller
+ * "/add-member" is the action to be performed when login button is clicked
+ * "/add-member-url" is the url
+ * 'flashSession/addUser' is view directory
+ * "testRequest" is the method defined in the UserController
+ * http://127.0.0.1:8000/login-requests
+ *
+ * Explanation:Then then controller is called by the route
+ */
+//http://127.0.0.1:8000/add-member-url
+//'flashSession/addUser'
+Route::view('/add-member-url', 'flashSession/addUser');
+Route::post('/add-member', [AddMemberController::class, 'addMember']);
