@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\AddMemberController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -347,3 +348,19 @@ Route::get("/logout", function () {
 //'flashSession/addUser'
 Route::view('/add-member-url', 'flashSession/addUser');
 Route::post('/add-member', [AddMemberController::class, 'addMember']);
+
+
+/**
+ * UPLOADING FILES IE. A PICTURE
+ * Calling a view from the controller
+ * "/upload" is the urlthat has the form for uploading the file
+ * "uploadFiles/upload" is directory containing upload view
+ * "/my-upload" is the url action that will be performed when button is clicked
+ * "uploadMyFile" is the method defined in the UploadController
+ * eg http://127.0.0.1:8000/get-users
+ *
+ * Explanation:Then then controller is called by the route
+ */
+//http://127.0.0.1:8000/upload
+Route::view("/upload", "uploadFiles/upload");
+Route::post("/my-upload", [UploadController::class, "uploadMyFile"]);
