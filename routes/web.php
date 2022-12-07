@@ -364,3 +364,7 @@ Route::post('/add-member', [AddMemberController::class, 'addMember']);
 //http://127.0.0.1:8000/upload
 Route::view("/upload", "uploadFiles/upload");
 Route::post("/my-upload", [UploadController::class, "uploadMyFile"]);
+
+
+//http://127.0.0.1:8000/localization
+Route::view("/localization", "localization/profle");

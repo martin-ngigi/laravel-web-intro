@@ -46,3 +46,5 @@ Sessions - used for storing the data on the server side. The data is stored perm
 
 Flash Session - used for storing the data on the server side. The data is stored tempolarily... i.e. after refresh, the data is lost.
                 - can be used to store confirmation message.
+
+Localization - Putting a language in different languages.
