@@ -389,7 +389,6 @@ Route::get('/get-members', [MemberController::class, 'showMember']);
  * "saveData/addMember" is directory containing upload view
  * "/add-mymember" is the url action that will be performed when button is clicked
  * "addMember" is the method defined in the UploadController
- * eg http://127.0.0.1:8000/get-users
  *
  * Explanation:Then then controller is called by the route
  */
