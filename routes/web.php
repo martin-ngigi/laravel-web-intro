@@ -7,6 +7,7 @@ use App\Http\Controllers\Users;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\AddMemberController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -368,3 +369,15 @@ Route::post("/my-upload", [UploadController::class, "uploadMyFile"]);
 
 //http://127.0.0.1:8000/localization
 Route::view("/localization", "localization/profle");
+
+
+/**
+ * PAGINATION
+ * Calling a view from the controller
+ * "/get-members" is the url
+ * "showMember" is the method defined in the UploadController
+ *
+ * Explanation:Then then controller is called by the route
+ */
+//http://127.0.0.1:8000/get-members
+Route::get('/get-members', [MemberController::class, 'showMember']);

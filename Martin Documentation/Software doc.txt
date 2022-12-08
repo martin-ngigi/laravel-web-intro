@@ -48,3 +48,5 @@ Flash Session - used for storing the data on the server side. The data is stored
                 - can be used to store confirmation message.
 
 Localization - Putting a language in different languages.
+
+Pagination- showing only chunks/portions of data... ie. when the db has a record containing 1000 rows, we can paginate and show 10 rows per page
