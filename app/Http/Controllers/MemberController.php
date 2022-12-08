@@ -36,4 +36,24 @@ class MemberController extends Controller
 
         return redirect('/add-member');
     }
+
+
+    function listMembersFunction(){
+        //get all data from db using Member model
+        $data = Member::all();
+        return view('dataCRUD/listMember', ['members'=>$data]);
+    }
+
+    function deleteMemberFunction($id){
+        //NOT WORKING
+        //$data = Member::find($id); //id is passed from the view, then to router url, then here
+        //$data->delete();
+
+        //WORKING
+        Member::where('ID', $id)->delete();
+
+        return redirect('/member-list');
+        //return $id;
+
+    }
 }
