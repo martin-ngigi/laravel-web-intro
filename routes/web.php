@@ -381,3 +381,7 @@ Route::view("/localization", "localization/profle");
  */
 //http://127.0.0.1:8000/get-members
 Route::get('/get-members', [MemberController::class, 'showMember']);
+
+//http://127.0.0.1:8000/add-member
+Route::view("/add-member", "saveData/addMember");
+Route::post("/add-mymember", [MemberController::class, 'addMember']);
