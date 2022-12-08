@@ -382,6 +382,17 @@ Route::view("/localization", "localization/profle");
 //http://127.0.0.1:8000/get-members
 Route::get('/get-members', [MemberController::class, 'showMember']);
 
+/**
+ * SAVE DATA TO DATABASE
+ * Calling a view from the controller
+ * "/add-member" is the url that has the form for uploading the data
+ * "saveData/addMember" is directory containing upload view
+ * "/add-mymember" is the url action that will be performed when button is clicked
+ * "addMember" is the method defined in the UploadController
+ * eg http://127.0.0.1:8000/get-users
+ *
+ * Explanation:Then then controller is called by the route
+ */
 //http://127.0.0.1:8000/add-member
 Route::view("/add-member", "saveData/addMember");
 Route::post("/add-mymember", [MemberController::class, 'addMember']);
