@@ -145,4 +145,32 @@ class MemberController extends Controller
         //get min of id
         return DB::table('members')->min('ID');
     }
+
+    function joinFunction(){
+        //users is table we want to apply the join to
+
+        //get all data from both tables
+        // return DB::table('members')
+        // ->join('users',    'members.id','=','users.id')
+        // ->get();
+
+        //get data from only members tables ie ->select('members.*')
+        // return DB::table('members')
+        // ->join('users',    'members.id','=','users.id')
+        // ->select('members.*') //when we comment this line, it will display all data from both tables, else[not commented] will only display data from members
+        // ->get();
+
+        //get data from users table ie ->select('users.*')
+        // return DB::table('members')
+        // ->join('users',    'members.id','=','users.id')
+        // ->select('users.*') //when we comment this line, it will display all data from both tables, else[not commented] will only display data from members
+        // ->get();
+
+        //where query
+        return DB::table('members')
+        ->join('users',    'members.id','=','users.id')
+        ->where('members.id',1) // ie select * from members where id=1
+        ->get();
+
+    }
 }

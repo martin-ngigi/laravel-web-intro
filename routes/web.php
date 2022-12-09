@@ -428,3 +428,9 @@ Route::get('qb-list', [MemberController::class, 'queryCRUDOperationsF']);
  */
 //http://127.0.0.1:8000/aggregates
 Route::get("aggregates", [MemberController::class, 'quryAggregate']);
+
+/**
+ * JOINS
+ */
+//http://127.0.0.1:8000/my-joins
+Route::get('/my-joins', [MemberController::class, 'joinFunction']);
