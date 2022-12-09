@@ -56,4 +56,22 @@ class MemberController extends Controller
         //return $id;
 
     }
+
+    function showUpdateDataFunction($id){
+        //return Member::find($id);
+        $data = Member::find($id);
+        return view('dataCRUD/updateMember', ['data' => $data]);
+    }
+
+    function postUpdateDataFunction(Request $req){
+        //return $req->input();
+
+        $data = Member::find($req->ID); //req.id
+        $data->Name = $req->nameInput;
+        $data->Email = $req->emailInput;
+        $data->Address = $req->addressInput;
+        $data->save();
+
+        return redirect('/member-list');
+    }
 }

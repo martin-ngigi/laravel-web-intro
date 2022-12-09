@@ -16,4 +16,6 @@ class Member extends Model
      *
      */
     public $timestamps = false;
+
+    //also dadd above line to solve update error
 }

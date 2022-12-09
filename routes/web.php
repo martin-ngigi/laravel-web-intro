@@ -404,7 +404,9 @@ Route::post("/add-mymember", [MemberController::class, 'addMember']);
  * "dataCRUD/addMember" is directory containing upload view
  * "/member-delete/{ID}" is the url action that will be performed when button is clicked
  * "deleteMemberFunction" is the method defined in the MemberController for deleting
- *
+ * "member-update/{ID}/" for udating user
+ * "/member-update-post"" is the action defined in updateMember.blade.php
+ * "postUpdateDataFunction" is the method defined in the Member Contoller
  * Explanation:Then then controller is called by the route
  */
 //http://127.0.0.1:8000/member-list
@@ -412,3 +414,5 @@ Route::post("/add-mymember", [MemberController::class, 'addMember']);
 Route::get("/member-list", [MemberController::class, 'listMembersFunction']);
 //handle delete
 Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunction']);
+Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);
+Route::post("/member-update-post", [MemberController::class, 'postUpdateDataFunction']);
