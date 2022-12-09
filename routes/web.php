@@ -417,5 +417,14 @@ Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunctio
 Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);
 Route::post("/member-update-post", [MemberController::class, 'postUpdateDataFunction']);
 
+/**
+ * QUERY CRUD OPERATIONS
+ */
 //http://127.0.0.1:8000/qb-list
 Route::get('qb-list', [MemberController::class, 'queryCRUDOperationsF']);
+
+/**
+ * AGGREGATES EG, sum, max, avg, min
+ */
+//http://127.0.0.1:8000/aggregates
+Route::get("aggregates", [MemberController::class, 'quryAggregate']);

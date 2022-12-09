@@ -125,4 +125,24 @@ class MemberController extends Controller
             ->delete();
 
     }
+
+    function quryAggregate(){
+        //get all data
+        // return DB::table('members')->get();
+
+        //get average of ids
+        // return DB::table('members')->avg('ID');
+
+        //get sum of ids
+        // return DB::table('members')->sum('ID');
+
+        //get count of ids
+        // return DB::table('members')->count('ID');
+
+        //get max of id
+        // return DB::table('members')->max('ID');
+
+        //get min of id
+        return DB::table('members')->min('ID');
+    }
 }
