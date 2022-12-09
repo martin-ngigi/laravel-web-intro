@@ -416,3 +416,6 @@ Route::get("/member-list", [MemberController::class, 'listMembersFunction']);
 Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunction']);
 Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);
 Route::post("/member-update-post", [MemberController::class, 'postUpdateDataFunction']);
+
+//http://127.0.0.1:8000/qb-list
+Route::get('qb-list', [MemberController::class, 'queryCRUDOperationsF']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -73,5 +74,55 @@ class MemberController extends Controller
         $data->save();
 
         return redirect('/member-list');
+    }
+
+    function queryCRUDOperationsF(){
+
+        //http://127.0.0.1:8000/qb-list
+
+        //RETURN VIEW WITH DATA
+        // $data= DB::table('members')->get();
+        // return view('queryBuilderCRUD/listMember', ['data'=>$data]);
+
+        //GET ALL DATA
+        // return DB::table('members')->get();
+
+        //WHERE CONDITION
+        // return DB::table('members')
+        // ->where('ID', 5)
+        // ->get();
+
+        //FIND FUNCTION
+        // return (array)DB::table('members')->find(5);
+
+        //COUNT
+        // return (array)DB::table('members')->count();
+
+        //INSERT
+        // return DB::table('members')
+        //     ->insert(
+        //         [
+        //             "Name" => "MARTIN",
+        //             "Email" => "MARTIN@GMAIL.COM",
+        //             "Address" => "NAIROBI",
+        //         ]
+        //     );
+
+        //UPDATE
+        // return DB::table('members')
+        //     -> where('ID', 5)
+        //     -> update(
+        //         [
+        //             "Name" => "Martin 1",
+        //             "Email" => "martin@GMAIL.COM",
+        //             "Address" => "NAIROBI",
+        //         ]
+        //     );
+
+        //DELETE
+        return DB::table('members')
+            ->where('ID', 6)
+            ->delete();
+
     }
 }
