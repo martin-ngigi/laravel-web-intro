@@ -48,4 +48,8 @@ Making MiddleWare(is a piece of code that checks users request. eg at login).. R
 Making models(Should be similar to Table name, but in singular tense)
     php artisan make:model User
 
+Making Migrations... "employees" is table name
+    php artisan make:migration create_employees
 
+Migrating the migration
+    php artisan migrate

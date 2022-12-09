@@ -54,3 +54,8 @@ Pagination- showing only chunks/portions of data... ie. when the db has a record
 Aggregate Query - Are database functions that provide mathematical calculations on the database eg. sum, max, min, average.
 
 Join - fetching data from two tables which are inter-related i.e if both tables have IDs.
+
+Migrations - create table in the php code the it will automatically create a database table that matches the code.
+        Benefit ->  enables version controll when there are different users working on different desktop pcs
+
+Migration defines the table structure and not the table data
