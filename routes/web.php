@@ -409,9 +409,9 @@ Route::post("/add-mymember", [MemberController::class, 'addMember']);
  * "postUpdateDataFunction" is the method defined in the Member Contoller
  * Explanation:Then then controller is called by the route
  */
-//http://127.0.0.1:8000/sms-list
+//http://127.0.0.1:8000/sms-member
 //get all list
-Route::get("/sms-list", [MemberController::class, 'listSMSFunction']);
+Route::get("/sms-member", [MemberController::class, 'listMemberFunction']);
 //handle delete
 Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunction']);
 Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);

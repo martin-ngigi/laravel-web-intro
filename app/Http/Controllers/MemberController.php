@@ -41,7 +41,7 @@ class MemberController extends Controller
     }
 
 
-    function listSMSFunction(){
+    function listMemberFunction(){
         //get all data from db using Member model
         $data = Member::all();
         return view('dataCRUD/listMember', ['members'=>$data]);
