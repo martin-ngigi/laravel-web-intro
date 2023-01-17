@@ -409,9 +409,9 @@ Route::post("/add-mymember", [MemberController::class, 'addMember']);
  * "postUpdateDataFunction" is the method defined in the Member Contoller
  * Explanation:Then then controller is called by the route
  */
-//http://127.0.0.1:8000/member-list
+//http://127.0.0.1:8000/sms-list
 //get all list
-Route::get("/member-list", [MemberController::class, 'listMembersFunction']);
+Route::get("/sms-list", [MemberController::class, 'listSMSFunction']);
 //handle delete
 Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunction']);
 Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);
@@ -434,3 +434,10 @@ Route::get("aggregates", [MemberController::class, 'quryAggregate']);
  */
 //http://127.0.0.1:8000/my-joins
 Route::get('/my-joins', [MemberController::class, 'joinFunction']);
+
+
+
+//createSMS
+//http://127.0.0.1:8000/my-sms-list
+Route::post("/my-sms-list", [MemberController::class, 'createSMS']);
+Route::get("/my-sms-list", [MemberController::class, 'createSMS']);// sender number, message code, sender number, amount, details

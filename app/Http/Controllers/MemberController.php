@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\View;
 
 class MemberController extends Controller
 {
@@ -39,10 +41,22 @@ class MemberController extends Controller
     }
 
 
-    function listMembersFunction(){
+    function listSMSFunction(){
         //get all data from db using Member model
         $data = Member::all();
         return view('dataCRUD/listMember', ['members'=>$data]);
+    }
+
+    public function createSMS(Request $request){
+        $theUrl = 'https://account.movepay.co.ke/api/v1/sms_list';
+        //data is the response
+          $data= Http::post($theUrl, [
+              //'token'=>$request->token
+              'token'=>'9e275e15571d0e3736b9453e25a28d727b5e9a25'
+          ]);
+          //return $response;
+          return View::make('dataCRUD/listSMS', compact('data'));
+
     }
 
     function deleteMemberFunction($id){
