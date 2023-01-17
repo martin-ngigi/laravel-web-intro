@@ -437,7 +437,6 @@ Route::get("aggregates", [MemberController::class, 'quryAggregate']);
 Route::get('/my-joins', [MemberController::class, 'joinFunction']);
 
 
-
 //createSMS
 //http://127.0.0.1:8000/my-sms-list
 Route::post("/my-sms-list", [MemberController::class, 'listSMS']);
