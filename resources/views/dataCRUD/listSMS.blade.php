@@ -10,15 +10,15 @@
         <td>details</td>
     </tr>
 
-    @foreach($data as $item)
-        {{-- <tr>
-            <td>{{$item->sender_number}}</td>
-            <td>{{$item->message_code}}</td>
-            <td>{{$item->amount}}</td>
-            <td>{{$item->details}}</td>
-        </tr> --}}
-
-        {{var_dump($item)}}
+    @foreach($data_response as $item)
+        <tr>
+            <td>{{$item['sender_number']}}</td>
+            <td>{{$item['message_code']}}</td>
+            <td>{{$item['amount']}}</td>
+            <td>{{$item['details']}}</td>
+        </tr>
 
     @endforeach
+
+    {{-- {{var_dump($data_response)}} --}}
 </table>

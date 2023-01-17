@@ -50,12 +50,33 @@ class MemberController extends Controller
     public function listSMS(Request $request){
         $theUrl = 'https://account.movepay.co.ke/api/v1/sms_list';
         //data is the response
-          $data= Http::post($theUrl, [
+          $json_response= Http::post($theUrl, [
               //'token'=>$request->token
               'token'=>'9e275e15571d0e3736b9453e25a28d727b5e9a25'
           ]);
-          //return $response;
-          return View::make('dataCRUD/listSMS', compact('data'));
+
+          //convert json to array
+          $data_response = json_decode($json_response, true);
+
+          //return $data_response;
+          return View::make('dataCRUD/listSMS', compact('data_response'));
+
+    }
+
+    //confirmOnlineTransactionMethod
+    public function confirmOnlineTransactionMethod(Request $request){
+        $theUrl = 'https://account.movepay.co.ke/api/v1/ConfirmOnlineTransaction';
+        //data is the response
+          $json_response= Http::post($theUrl, [
+              //'token'=>$request->token
+              'token'=>'9e275e15571d0e3736b9453e25a28d727b5e9a25',
+              'MerchantRequestID'=> 'RAG4HX28Q8'
+          ]);
+          //convert json to array
+          $data_response = json_decode($json_response, true);
+
+          return $data_response;
+          //return View::make('dataCRUD/confirmOnlineTransaction', compact('data_response'));
 
     }
 

@@ -441,3 +441,9 @@ Route::get('/my-joins', [MemberController::class, 'joinFunction']);
 //http://127.0.0.1:8000/my-sms-list
 Route::post("/my-sms-list", [MemberController::class, 'listSMS']);
 Route::get("/my-sms-list", [MemberController::class, 'listSMS']);// sender number, message code, sender number, amount, details
+
+
+//confirmOnlineTransaction
+//http://127.0.0.1:8000/confirmOnlineTransaction
+Route::post("/confirmOnlineTransaction", [MemberController::class, 'confirmOnlineTransactionMethod']);
+Route::get("/confirmOnlineTransaction", [MemberController::class, 'confirmOnlineTransactionMethod']);// sender number, message code, sender number, amount, details
