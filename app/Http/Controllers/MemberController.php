@@ -47,6 +47,12 @@ class MemberController extends Controller
         return view('dataCRUD/listMember', ['members'=>$data]);
     }
 
+    /**
+     * Summary of listSMS
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\View
+     * listSMS is a function that returns a list of the members sms
+     */
     public function listSMS(Request $request){
         $theUrl = 'https://account.movepay.co.ke/api/v1/sms_list';
         //data is the response

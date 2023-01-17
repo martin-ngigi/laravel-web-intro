@@ -9,7 +9,7 @@
         <td>details</td>
     </tr>
 
-    @foreach($data as $item)
+    @foreach($data_response as $item)
         {{-- <tr>
             <td>{{$item->MerchantRequestID}}</td>
             <td>{{$item->sender_number}}</td>
