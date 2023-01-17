@@ -440,5 +440,5 @@ Route::get('/my-joins', [MemberController::class, 'joinFunction']);
 
 //createSMS
 //http://127.0.0.1:8000/my-sms-list
-Route::post("/my-sms-list", [MemberController::class, 'createSMS']);
-Route::get("/my-sms-list", [MemberController::class, 'createSMS']);// sender number, message code, sender number, amount, details
+Route::post("/my-sms-list", [MemberController::class, 'listSMS']);
+Route::get("/my-sms-list", [MemberController::class, 'listSMS']);// sender number, message code, sender number, amount, details

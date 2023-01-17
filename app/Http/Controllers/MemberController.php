@@ -47,7 +47,7 @@ class MemberController extends Controller
         return view('dataCRUD/listMember', ['members'=>$data]);
     }
 
-    public function createSMS(Request $request){
+    public function listSMS(Request $request){
         $theUrl = 'https://account.movepay.co.ke/api/v1/sms_list';
         //data is the response
           $data= Http::post($theUrl, [
