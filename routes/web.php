@@ -412,6 +412,7 @@ Route::post("/add-mymember", [MemberController::class, 'addMember']);
 //http://127.0.0.1:8000/sms-member
 //get all list
 Route::get("/sms-member", [MemberController::class, 'listMemberFunction']);
+
 //handle delete
 Route::get("/member-delete/{ID}", [MemberController::class, 'deleteMemberFunction']);
 Route::get("/member-update/{ID}", [MemberController::class, 'showUpdateDataFunction']);
