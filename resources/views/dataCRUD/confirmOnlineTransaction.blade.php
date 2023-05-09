@@ -1,5 +1,5 @@
 <!-- dataCRUD -->
-<h1>SMS List</h1>
+<h1>Confirmation List</h1>
 
 <table border="1">
     <tr>
